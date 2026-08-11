@@ -7,13 +7,13 @@
 *Free medications, a community-powered fund, and a humanoid robot that keeps it stocked — technology in service of humanity.*
 
 <p align="center">
-  <img src="05_MEDIA/IMAGES/main image of the project.png" width="900">
+  <img src="05_MEDIA/IMAGES/main image of the project.png" width="600">
 </p>
 
 <p align="center">
-  <img src="05_MEDIA/IMAGES/VENDING MACHINE 4K.png" width="290">
-  <img src="05_MEDIA/IMAGES/JALOUL 4K.png" width="290">
-  <img src="05_MEDIA/IMAGES/PCB_KEYBOARD_4K.png" width="290">
+  <img src="05_MEDIA/IMAGES/VENDING MACHINE 4K.png" width="250">
+  <img src="05_MEDIA/IMAGES/JALOUL 4K.png" width="250">
+  <img src="05_MEDIA/IMAGES/PCB_KEYBOARD_4K.png" width="250">
 </p>
 
 ![Raspberry Pi](https://img.shields.io/badge/Vision-Raspberry%20Pi%205-red)
@@ -34,6 +34,7 @@ Built by **HABBOUBY EDEM**
 ## Table of Contents
 
 - [About](#about)
+- [Repository Structure](#repository-structure)
 - [Scope of This Submission](#scope-of-this-submission)
 - [Note on Physical Fabrication](#note-on-physical-fabrication)
 - [The Story Behind KATARA-VD](#the-story-behind-katara-vd)
@@ -56,7 +57,6 @@ Built by **HABBOUBY EDEM**
 - [Electronics & PCB](#electronics--pcb)
 - [Materials & Fabrication](#materials--fabrication)
 - [Fasteners](#fasteners)
-- [Repository Structure](#repository-structure)
 - [CAD Files](#cad-files)
 - [Simulations](#simulations)
 - [On AI Assistance](#on-ai-assistance)
@@ -75,6 +75,52 @@ Two systems, one mission:
 2. **JALOUL** — a 10-joint humanoid robot on a mecanum base, designed specifically to restock the machine's shelves autonomously.
 
 Designed from scratch in SolidWorks and KiCad.
+
+---
+
+## Repository Structure
+
+```text
+KATARA-VD/
+│
+├── 01_3D/
+│   ├── SOLIDWORKS_FILES/
+│   │   ├── HUMANOID_ROBOT JALOUL/      # JALOUL — native SolidWorks parts & assemblies
+│   │   └── VENDING_MACHINE/            # Vending machine — native SolidWorks parts & assemblies
+│   ├── STEP_FILES/
+│   │   ├── HUMANOID_ROBOT JALOUL/      # total assembly of jaloul.STEP
+│   │   └── VENDING_MACHINE/            # assembly vending machine.STEP
+│   └── STL/
+│       ├── HUMANOID_ROBOT JALOUL/      # Slicer-ready STL, split by sub-assembly
+│       └── VENDING_MACHINE/            # Slicer-ready STL, split by sub-assembly
+│
+├── 02_DXF/
+│   └── VENDING_MACHINE/                # Flat panels (walls, base, shelves...) for CNC laser-cut MDF
+│
+├── 03_PCB_DESIGN/
+│   ├── VENDING MACHINE PCB.kicad_sch / .kicad_pcb / .kicad_pro / .kicad_prl
+│   └── CARTE ELEC MEC 07.step
+│
+├── 04_DOCS/
+│   └── KATARA-VD_PCB_Components.xlsx   # Full BOM with Amazon sourcing links
+│
+├── 05_MEDIA/
+│   ├── IMAGES/
+│   │   ├── main image of the project.png
+│   │   ├── VENDING MACHINE 4K.png
+│   │   ├── JALOUL 4K.png
+│   │   ├── JALOUL in different positions.png
+│   │   └── PCB_KEYBOARD_4K.png
+│   └── SIMULATIONS/
+│       ├── mechanism of prescription.gif
+│       ├── mechanism of giving money.gif
+│       ├── GIF MEC PUSHING THE MONEY INTO THE BOX.gif
+│       ├── mechanism for opening and closing door.gif
+│       └── translation of the robot on yy' axis.gif
+│
+├── LICENSE
+└── README.md
+```
 
 ---
 
@@ -137,7 +183,7 @@ The main skeleton holds **5 shelves**, each guided by two systems working togeth
 ## Part 2 — Solar Power & Access Doors
 
 <p align="center">
-  <img src="05_MEDIA/IMAGES/VENDING MACHINE 4K.png" width="500">
+  <img src="05_MEDIA/IMAGES/VENDING MACHINE 4K.png" width="450">
 </p>
 
 The machine carries its own **solar panel and mounting bracket** on top, feeding the battery system so it never runs dry. Two actuators (**vérins**) open the front doors — each guided by two hinges — so the shelves become accessible to JALOUL from the outside without exposing the machine's interior to the public. A dedicated electrical compartment houses the machine's power and control boards.
@@ -147,7 +193,7 @@ The machine carries its own **solar panel and mounting bracket** on top, feeding
 ## Part 3 — Prescription Verification System
 
 <p align="center">
-  <img src="05_MEDIA/SIMULATIONS/mechanism of prescription.gif" width="500">
+  <img src="05_MEDIA/SIMULATIONS/mechanism of prescription.gif" width="450">
 </p>
 
 Access to the medication is gated by a scan, not by a button press. A **stepper-driven rotary-to-linear mechanism**, guided by two rails and two wheels fitted with **radial ball bearings**, extends a plate out of the machine. The plate holds the prescription in place via a **magnetic mount** — two small arms clamp onto it using the same magnetic principle. Once retracted inside, an **Intel RealSense** camera — fixed at a precisely calculated angle to capture the whole document — scans the prescription to identify the medication and confirm the correct dispensing choice. The sequence: extend to receive the prescription → retract to scan → extend again to return it to the person.
@@ -157,8 +203,10 @@ Access to the medication is gated by a scan, not by a button press. A **stepper-
 ## Part 4 — Coin Dispensing Mechanism ("Giving Money")
 
 <p align="center">
-  <img src="05_MEDIA/SIMULATIONS/mechanism of giving money.gif" width="500">
-  <img src="05_MEDIA/SIMULATIONS/GIF MEC PUSHING THE MONEY INTO THE BOX.gif" width="500">
+  <img src="05_MEDIA/SIMULATIONS/mechanism of giving money.gif" width="450">
+</p>
+<p align="center">
+  <img src="05_MEDIA/SIMULATIONS/GIF MEC PUSHING THE MONEY INTO THE BOX.gif" width="450">
 </p>
 
 When a family withdraws money from the fund, an **MG90S metal-gear servo** drives a **rack-and-pinion system**, sized precisely to the dimensions of a 1-euro coin, pushing out two coins at a time. A second servo locks and unlocks a small security door that covers the coin slot; once unlocked, the door opens smoothly, guided at its edge by two matching pieces.
@@ -174,7 +222,7 @@ The donation side accepts **2-euro coins only** — smaller coins are filtered o
 ## Part 6 — Charity Keypad PCB
 
 <p align="center">
-  <img src="05_MEDIA/IMAGES/PCB_KEYBOARD_4K.png" width="500">
+  <img src="05_MEDIA/IMAGES/PCB_KEYBOARD_4K.png" width="450">
 </p>
 
 The identification and donation-amount interface runs on a custom **KiCad PCB** — a double-sided board with **0.5 mm copper traces** throughout, since the board carries no significant power or current. An **OLED display** handles animations and shows each resident's ID code, since every person in the community has a unique identifier used to validate which function (receiving or giving) they're authorized to access. Full BOM with sourcing links: [`04_DOCS/KATARA-VD_PCB_Components.xlsx`](04_DOCS/KATARA-VD_PCB_Components.xlsx).
@@ -192,7 +240,7 @@ An infrared thermal camera reads the person standing in front of the machine —
 ## Part 8 — Head & Expression System
 
 <p align="center">
-  <img src="05_MEDIA/IMAGES/JALOUL 4K.png" width="400">
+  <img src="05_MEDIA/IMAGES/JALOUL 4K.png" width="450">
 </p>
 
 JALOUL's head carries an **Intel RealSense** camera for vision and a **Raspberry Pi 5** for onboard data processing. A servo-driven **mouth mechanism** — a driver/follower pulley pair guided at both ends by matched M3 screws and nuts, same module and diameter for symmetric motion — opens and closes as if the robot is speaking, giving it a more expressive, approachable presence.
@@ -207,11 +255,19 @@ After the head, the neck and body were completed, followed by the first two shou
 
 ## Part 10 — Arm Completion & 360° Gripper
 
-The half-arm alone didn't give a good enough range of motion, so **3 additional joints** were added — two to complete the arm and let it reach in closer toward the body, and a third dedicated to the gripper, letting it spin a full **360°** around the arm's axis. That's **5 joints per arm, 10 total** across both. The gripper itself runs on a dual-pinion system driven by an **MG995 servo**, and the overall body shape was refined to look more presentable and cohesive.
+<p align="center">
+  <img src="05_MEDIA/IMAGES/JALOUL in different positions.png" width="450">
+</p>
+
+The half-arm alone didn't give a good enough range of motion, so **3 additional joints** were added — two to complete the arm and let it reach in closer toward the body, and a third dedicated to the gripper, letting it spin a full **360°** around the arm's axis. That's **5 joints per arm, 10 total** across both. The gripper itself runs on a dual-pinion system driven by an **MG995 servo**, and the overall body shape was refined to look more presentable and cohesive. The image above shows both arms swept across several positions, illustrating the reach this extra range of motion unlocks.
 
 ---
 
 ## Part 11 — Mecanum Base & Vertical Lift
+
+<p align="center">
+  <img src="05_MEDIA/SIMULATIONS/translation of the robot on yy' axis.gif" width="450">
+</p>
 
 JALOUL moves on a **4-wheel mecanum differential base**, giving it 5 distinct movements — forward, backward, left, right, and rotation around its own center of inertia (deliberately aligned with its center of mass for stable motion). Four **NEMA 23 stepper motors** drive the wheels. A storage backpack rides up and down along the robot's Y-Y′ axis via a **lead screw–nut system**, powered by a fifth NEMA 23 stepper and guided by two **M8 smooth rods** with linear bearings.
 
@@ -272,54 +328,7 @@ Full BOM with Amazon sourcing links: [`04_DOCS/KATARA-VD_PCB_Components.xlsx`](0
 | M3 | 20 mm | 40 |
 | M3 | 30 mm | 40 |
 
-
-
 **Total: to be finalized** — final counts will be filled in once the last assemblies are locked.
-
----
-
-## Repository Structure
-
-```text
-KATARA-VD/
-│
-├── 01_3D/
-│   ├── SOLIDWORKS_FILES/
-│   │   ├── HUMANOID_ROBOT JALOUL/      # JALOUL — native SolidWorks parts & assemblies
-│   │   └── VENDING_MACHINE/            # Vending machine — native SolidWorks parts & assemblies
-│   ├── STEP_FILES/
-│   │   ├── HUMANOID_ROBOT JALOUL/      # total assembly of jaloul.STEP
-│   │   └── VENDING_MACHINE/            # assembly vending machine.STEP
-│   └── STL/
-│       ├── HUMANOID_ROBOT JALOUL/      # Slicer-ready STL, split by sub-assembly
-│       └── VENDING_MACHINE/            # Slicer-ready STL, split by sub-assembly
-│
-├── 02_DXF/
-│   └── VENDING_MACHINE/                # Flat panels (walls, base, shelves...) for CNC laser-cut MDF
-│
-├── 03_PCB_DESIGN/
-│   ├── VENDING MACHINE PCB.kicad_sch / .kicad_pcb / .kicad_pro / .kicad_prl
-│   └── CARTE ELEC MEC 07.step
-│
-├── 04_DOCS/
-│   └── KATARA-VD_PCB_Components.xlsx   # Full BOM with Amazon sourcing links
-│
-├── 05_MEDIA/
-│   ├── IMAGES/
-│   │   ├── main image of the project.png
-│   │   ├── VENDING MACHINE 4K.png
-│   │   ├── JALOUL 4K.png
-│   │   └── PCB_KEYBOARD_4K.png
-│   └── SIMULATIONS/
-│       ├── mechanism of prescription.gif
-│       ├── mechanism of giving money.gif
-│       ├── GIF MEC PUSHING THE MONEY INTO THE BOX.gif
-│       ├── mechanism for opening and closing door.gif
-│       └── translation of the robot on yy' axis.gif
-│
-├── LICENSE
-└── README.md
-```
 
 ---
 
@@ -337,7 +346,7 @@ Per subsystem: **native SolidWorks** source, **STEP** (any CAD tool), and **STL*
 
 **Prescription mechanism**
 
-<img src="05_MEDIA/SIMULATIONS/mechanism of prescription.gif" width="260">
+<img src="05_MEDIA/SIMULATIONS/mechanism of prescription.gif" width="250">
 
 Rotary-to-linear extension that presents the prescription to the RealSense camera.
 
@@ -346,7 +355,7 @@ Rotary-to-linear extension that presents the prescription to the RealSense camer
 
 **Giving money mechanism**
 
-<img src="05_MEDIA/SIMULATIONS/mechanism of giving money.gif" width="260">
+<img src="05_MEDIA/SIMULATIONS/mechanism of giving money.gif" width="250">
 
 Rack-and-pinion coin ejection, sized to a 1-euro coin.
 
@@ -355,7 +364,7 @@ Rack-and-pinion coin ejection, sized to a 1-euro coin.
 
 **Coin storage**
 
-<img src="05_MEDIA/SIMULATIONS/GIF MEC PUSHING THE MONEY INTO THE BOX.gif" width="260">
+<img src="05_MEDIA/SIMULATIONS/GIF MEC PUSHING THE MONEY INTO THE BOX.gif" width="250">
 
 Donated coins pushed securely into the storage box.
 
@@ -366,7 +375,7 @@ Donated coins pushed securely into the storage box.
 
 **Door actuation**
 
-<img src="05_MEDIA/SIMULATIONS/mechanism for opening and closing door.gif" width="260">
+<img src="05_MEDIA/SIMULATIONS/mechanism for opening and closing door.gif" width="250">
 
 Dual-actuator, hinge-guided access doors.
 
@@ -375,12 +384,18 @@ Dual-actuator, hinge-guided access doors.
 
 **JALOUL — Y-axis translation**
 
-<img src="05_MEDIA/SIMULATIONS/translation of the robot on yy' axis.gif" width="260">
+<img src="05_MEDIA/SIMULATIONS/translation of the robot on yy' axis.gif" width="250">
 
 The backpack lift traveling along the Y-Y′ axis via lead screw.
 
 </td>
 <td width="33%" align="center">
+
+**JALOUL — arm reach**
+
+<img src="05_MEDIA/IMAGES/JALOUL in different positions.png" width="250">
+
+Both arms swept across multiple positions, showing the range unlocked by the extra joints.
 
 </td>
 </tr>
