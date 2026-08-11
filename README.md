@@ -207,10 +207,6 @@ After the head, the neck and body were completed, followed by the first two shou
 
 ## Part 10 — Arm Completion & 360° Gripper
 
-<p align="center">
-  <img src="05_MEDIA/SIMULATIONS/translation of the robot on yy' axis.gif" width="500">
-</p>
-
 The half-arm alone didn't give a good enough range of motion, so **3 additional joints** were added — two to complete the arm and let it reach in closer toward the body, and a third dedicated to the gripper, letting it spin a full **360°** around the arm's axis. That's **5 joints per arm, 10 total** across both. The gripper itself runs on a dual-pinion system driven by an **MG995 servo**, and the overall body shape was refined to look more presentable and cohesive.
 
 ---
@@ -273,10 +269,10 @@ Full BOM with Amazon sourcing links: [`04_DOCS/KATARA-VD_PCB_Components.xlsx`](0
 
 | Screw | Length | Quantity |
 |-------|-------:|---------:|
-| M3 | 15 mm | _TBD_ |
-| M3 | 20 mm | _TBD_ |
-| M5 | 40 mm | _TBD_ |
-| M8 | — (smooth guide rods) | _TBD_ |
+| M3 | 20 mm | 40 |
+| M3 | 30 mm | 40 |
+
+
 
 **Total: to be finalized** — final counts will be filled in once the last assemblies are locked.
 
