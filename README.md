@@ -103,7 +103,8 @@ KATARA-VD/
 │
 ├── 04_DOCS/
 │   └── KATARA-VD_PCB_Components.xlsx   # Full BOM with Amazon sourcing links
-│
+│   └──WIRING
+|
 ├── 05_MEDIA/
 │   ├── IMAGES/
 │   │   ├── main image of the project.png
