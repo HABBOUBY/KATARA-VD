@@ -176,7 +176,11 @@ The vending machine's charity keypad and dispensing logic run on their own KiCad
 
 ## Part 1 — Skeleton, Shelving & Archimedean Dispensers
 
-The main skeleton holds **5 shelves**, each guided by two systems working together: a **dual-rail linear guide** and a **wheel-based guide**, keeping every shelf level and stable as it moves. To save interior space while still letting JALOUL reach every level, the shelves extend outward through a **scissor-lift mechanism** driven by a **NEMA 17 stepper motor**. Each shelf dispenses its products through a spiral **Archimedean screw**, turning rotary motion into steady, single-item feeding.
+<p align="center">
+  <img src="05_MEDIA/IMAGES/mec cisseau.PNG" width="450">
+</p>
+
+The main skeleton holds **5 shelves**, each guided by two systems working together: a **dual-rail linear guide** and a **wheel-based guide**, keeping every shelf level and stable as it moves. To save interior space while still letting JALOUL reach every level, the shelves extend outward through a **scissor-lift mechanism** driven by a **NEMA 17 stepper motor** — one per shelf, as shown above. Each shelf dispenses its products through a spiral **Archimedean screw**, turning rotary motion into steady, single-item feeding.
 
 ---
 
@@ -198,6 +202,13 @@ The machine carries its own **solar panel and mounting bracket** on top, feeding
 
 Access to the medication is gated by a scan, not by a button press. A **stepper-driven rotary-to-linear mechanism**, guided by two rails and two wheels fitted with **radial ball bearings**, extends a plate out of the machine. The plate holds the prescription in place via a **magnetic mount** — two small arms clamp onto it using the same magnetic principle. Once retracted inside, an **Intel RealSense** camera — fixed at a precisely calculated angle to capture the whole document — scans the prescription to identify the medication and confirm the correct dispensing choice. The sequence: extend to receive the prescription → retract to scan → extend again to return it to the person.
 
+<p align="center">
+  <img src="05_MEDIA/IMAGES/mec ordonnance 1.1.PNG" width="350">
+  <img src="05_MEDIA/IMAGES/fixation ordonnance.PNG" width="350">
+</p>
+
+*Left: side-view cutaway of the rotary-to-linear stepper mechanism with the RealSense camera positioned above it. Right: top-down view of the prescription clamped between the two magnetic arms before the scan.*
+
 ---
 
 ## Part 4 — Coin Dispensing Mechanism ("Giving Money")
@@ -215,7 +226,11 @@ When a family withdraws money from the fund, an **MG90S metal-gear servo** drive
 
 ## Part 5 — Coin Acceptance & Storage
 
-The donation side accepts **2-euro coins only** — smaller coins are filtered out, and larger coins are naturally rejected by the slot geometry. An **IR sensor** confirms each valid coin as it enters, registering the donation. Accepted coins fall into a **storage box**, pushed fully inside by a rack-and-pinion mechanism so they stay securely contained rather than jamming the entry.
+<p align="center">
+  <img src="05_MEDIA/IMAGES/système de tri coin.PNG" width="300">
+</p>
+
+The donation side accepts **2-euro coins only** — smaller coins are filtered out, and larger coins are naturally rejected by the slot geometry. This coin-sorting slot is the same basic mechanism found in virtually every vending machine: a slotted rotating gate lets correctly-sized coins drop through while rejecting anything else. An **IR sensor** confirms each valid coin as it enters, registering the donation. Accepted coins fall into a **storage box**, pushed fully inside by a rack-and-pinion mechanism so they stay securely contained rather than jamming the entry.
 
 ---
 
