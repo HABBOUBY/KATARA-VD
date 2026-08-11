@@ -1,0 +1,104 @@
+====================================================================
+KATARA-VD — VENDING MACHINE — WIRING REFERENCE
+====================================================================
+No dedicated main PCB for this subsystem. The only custom PCB in the
+whole project is the charity keypad module (see 03_PCB_DESIGN/).
+Everything below lives on perforated prototyping boards ("cartes
+perforees"), grouped by mechanism to keep wiring runs short.
+
+--------------------------------------------------------------------
+1. POWER SOURCES
+--------------------------------------------------------------------
+- 3x LiPo 3S (11.1V) packs
+    -> main power rail for all DRV8825 drivers (VMOT) and actuators
+- 1x solar storage battery
+    -> charged by the rooftop solar panel
+    -> feeds the 11.1V bus automatically whenever the LiPo packs run
+       low (diode-OR / auto switch-over between LiPo and solar bank)
+- 12V -> 5V buck regulators (mounted on the perfboards)
+    -> supply the 5V logic rail: DRV8825 logic (VDD), OLED displays,
+       IR sensor, PWM expansion boards, keypad PCB
+
+--------------------------------------------------------------------
+2. STEPPER DRIVERS — DRV8825 (41x TOTAL)
+--------------------------------------------------------------------
+Spread across several perfboards, one cluster per mechanism rather
+than a single centralized board:
+
+  - Scissor-lift steppers (NEMA 17)        -> 1x per shelf, 5 shelves
+  - Archimedean-screw dispenser steppers   -> grouped per shelf
+  - Prescription rotary-to-linear stepper  -> 1x
+  - Remaining channels reserved / grouped per mechanism
+    (see 04_DOCS/KATARA-VD_PCB_Components.xlsx for the full motor list)
+
+Standard wiring per DRV8825 driver:
+  VMOT           -> 11.1V rail (LiPo 3S / solar bank)
+  GND (power)    -> common ground
+  VDD            -> 5V logic rail
+  GND (logic)    -> common ground
+  STEP           -> Arduino Mega 2560 digital pin
+  DIR            -> Arduino Mega 2560 digital pin
+  ENABLE         -> tied low, unless a per-shelf disable line is added
+  A1 / A2 / B1 / B2 -> stepper motor coil pairs
+  Current limit  -> set via onboard potentiometer, per motor's rating
+
+--------------------------------------------------------------------
+3. RASPBERRY PI 5 — VISION & ANALYSIS (x2, ISOLATED SUPPLIES)
+--------------------------------------------------------------------
+Pi 5 #1 — Infrared & Interaction
+  - MLX90640 thermal camera  -> I2C
+  - Speaker (via amplifier)  -> I2S or analog audio out
+  - Power: own isolated 5V/5A supply, regulated off the 11.1V rail
+
+Pi 5 #2 — Prescription Analysis
+  - Intel RealSense D435     -> USB 3.0
+  - Power: own isolated 5V/5A supply, regulated off the 11.1V rail
+
+Both Pi 5 boards send their decisions to the Arduino Mega 2560 over
+serial/USB; the Mega handles all actuator/motor timing.
+
+--------------------------------------------------------------------
+4. SERVO CONTROL — PWM EXPANSION BOARDS (x3)
+--------------------------------------------------------------------
+3x 16-channel PWM expansion boards (PCA9685-type), addressed over I2C
+from the Arduino Mega 2560:
+
+  Board 1 -> Prescription arm servos + magnetic-mount servos
+  Board 2 -> Coin dispensing (rack & pinion) + lock/unlock door servo
+  Board 3 -> Door actuators (verins) + spare channels
+
+Each board:
+  VCC (logic)      -> 5V logic rail
+  V+ (servo power) -> 5V logic rail (separate 5V servo rail if current
+                       draw requires it)
+  GND              -> common ground
+  SDA / SCL        -> Arduino Mega 2560 I2C bus (unique address per
+                       board via address pins)
+
+--------------------------------------------------------------------
+5. SENSORS & INTERFACE
+--------------------------------------------------------------------
+  - IR sensor (coin acceptance)   -> Arduino Mega 2560 digital input
+  - Coin sorter mechanism         -> mechanical only, no electronics
+  - OLED displays (x2, 1/keypad)  -> I2C, distinct addresses
+  - Charity keypad PCB            -> button matrix to Mega digital
+                                      inputs + OLED on shared I2C bus
+
+--------------------------------------------------------------------
+6. SOLAR / CHARGE PATH
+--------------------------------------------------------------------
+  Solar panel -> charge controller -> solar storage battery
+              -> 11.1V bus (shared with the 3x LiPo 3S packs via
+                 diode-OR / automatic switch-over)
+
+--------------------------------------------------------------------
+NOTES
+--------------------------------------------------------------------
+- No custom PCB for the main system: DRV8825 clusters and 12->5V
+  regulators live on perfboards, grouped by mechanism.
+- The only custom PCB is the charity keypad module (03_PCB_DESIGN/).
+- Common ground must be shared across every perfboard, both Pi 5
+  units, the Arduino Mega 2560, and the LiPo/solar power path.
+- Exact pin assignments for the Arduino Mega 2560 are firmware-side
+  and will be documented once control code is written (see README ->
+  Future Improvements).

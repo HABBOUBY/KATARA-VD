@@ -1,0 +1,78 @@
+====================================================================
+KATARA-VD — JALOUL (HUMANOID ROBOT) — WIRING REFERENCE
+====================================================================
+No dedicated PCB for JALOUL either. Same approach as the vending
+machine: DRV8825 driver(s) and 5V regulation live on a perforated
+prototyping board ("carte perforee").
+
+--------------------------------------------------------------------
+1. POWER SOURCES
+--------------------------------------------------------------------
+- 2x LiPo 3S (11.1V) packs:
+    Pack 1 -> Navigation systems (RPLiDAR, sensors, logic-side
+              electronics)
+    Pack 2 -> Joint actuation & Y-Y' translation system (all servos +
+              all steppers: arms, gripper, mecanum base, backpack lift)
+- Raspberry Pi 5:
+    -> own dedicated, isolated power bank — never shares a rail with
+       Pack 1 or Pack 2, to protect it from motor noise/brownouts
+- 5V logic rail:
+    -> regulated off Pack 2, feeds DRV8825 logic and low-power
+       peripherals
+
+--------------------------------------------------------------------
+2. STEPPER DRIVERS — DRV8825, 5V LOGIC
+--------------------------------------------------------------------
+DRV8825 driver(s) for the NEMA 17 stepper(s), mounted on the perfboard:
+  VMOT           -> 11.1V rail (Pack 2)
+  GND (power)    -> common ground
+  VDD            -> 5V logic rail
+  GND (logic)    -> common ground
+  STEP           -> control board digital pin
+  DIR            -> control board digital pin
+  A1 / A2 / B1 / B2 -> stepper coil pairs
+  Current limit  -> set via onboard potentiometer
+
+Note: the mecanum base (4x NEMA 23) and the Y-Y' backpack lift
+(1x NEMA 23) run on their own higher-current drivers, wired the same
+way but sized for NEMA 23 current draw — check
+04_DOCS/KATARA-VD_PCB_Components.xlsx for driver ratings per motor.
+
+--------------------------------------------------------------------
+3. RASPBERRY PI 5 — VISION & NAVIGATION
+--------------------------------------------------------------------
+  - Intel RealSense D435 -> USB 3.0, head-mounted vision
+  - RPLiDAR              -> USB/UART, obstacle detection & mapping
+  - Power: dedicated power bank, isolated from Pack 1 and Pack 2
+  - Sends motion/joint commands to the onboard control board over
+    serial/USB
+
+--------------------------------------------------------------------
+4. SERVO CONTROL
+--------------------------------------------------------------------
+  - MG90S servos -> mouth mechanism + smaller joints
+  - MG995 servos -> gripper, one per arm
+  - Power: 5V logic rail (Pack 2), common ground with the control board
+
+--------------------------------------------------------------------
+5. POWER SPLIT LOGIC
+--------------------------------------------------------------------
+  Pack 1 (Navigation):    RPLiDAR + navigation sensors + logic
+  Pack 2 (Joints & Y-Y'): all servos + all steppers (arms, gripper,
+                           mecanum base, backpack lift)
+  Pi 5 power bank:        isolated — never shares a rail with either
+                           LiPo pack
+
+--------------------------------------------------------------------
+NOTES
+--------------------------------------------------------------------
+- No custom PCB for JALOUL: DRV8825 driver(s) and 5V regulation live
+  on a perfboard, same approach as the vending machine.
+- Common ground must be shared across the perfboard, the Raspberry
+  Pi 5, and both LiPo packs — except where isolation is intentional
+  (the Pi 5 power bank).
+- NEMA 23 current draw (base + lift) is significantly higher than
+  NEMA 17 — size wiring gauge and driver heatsinking accordingly.
+- Exact control-board pin assignments are firmware-side and will be
+  documented once control code is written (see README -> Future
+  Improvements).
