@@ -300,7 +300,7 @@ The lead screw system was finished off with a protective cover, and **aluminum e
 KATARA-VD doesn't rely on outside donations to stay running — the fund lives inside the machine itself, managed through the two keypads described in [Part 4](#part-4--coin-dispensing-mechanism-giving-money) and [Part 5](#part-5--coin-acceptance--storage).
 
 - **Every person has a personal ID code**, entered on either keypad, that tells the machine exactly what they're authorized to do.
-- **Requesting help:** a family in need enters their ID and the amount they need on the "receiving" keypad. Each family is capped at **€10 per month** — enough to help them get by, not a blank check.
+- **Requesting help:** a family in need enters their ID and the amount they need on the "receiving" keypad. Each family is capped at **€10 each day** — enough to help them get by, not a blank check.
 - **Giving back:** someone whose financial situation is stable is expected to contribute through the "giving" keypad — exactly **€2 per day**. The coin acceptor is built to reject anything above or below that amount.
 - **Accountability:** if a contributor misses their daily donation for **10 days within a single month**, they lose access to free medication from the machine until their participation resumes.
 - **The loop closes automatically:** every euro accepted through the donation side feeds directly into the coin-dispensing mechanism on the receiving side — the community funds itself.
@@ -419,20 +419,12 @@ Both arms swept across multiple positions, showing the range unlocked by the ext
 
 ---
 
-## On AI Assistance
-
-Throughout the development of this project, I made extensive use of AI tools to support and accelerate different stages of the workflow. For research, AI helped me quickly gather and cross-reference technical information — mechanical design principles, component specifications, and best practices for kinematics, PCB design, and embedded systems. For visual presentation, AI-generated 4K renders were used to showcase the design intent and aesthetic direction, complementing the actual CAD models. For documentation, AI helped structure devlogs, organize this README, and translate and refine descriptions from French to English. All engineering — mechanical design, electronics, CAD modeling, PCB layout, and system architecture — was done independently by me; AI served strictly as a support tool for efficiency, clarity, and presentation, not as a replacement for the actual design and problem-solving process.
-
----
-
 ## Future Improvements
 
 - Physical build, once 3D printing, camera, and Raspberry Pi access are within reach
-- Firmware: Arduino Mega 2560 control for the vending machine's actuators and sensors
 - Firmware: Raspberry Pi 5 vision pipeline (RealSense prescription OCR + thermal state detection)
 - Identification/database backend linking resident IDs to the fund's give/receive logic
-- JALOUL: autonomous navigation loop tying LiDAR mapping to the restocking routine
-
+-Add a delivery drone to transport medications from local storage to JALOUL for restocking the vending machine
 ---
 
 ## License
