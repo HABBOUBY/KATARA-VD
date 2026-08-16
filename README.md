@@ -279,9 +279,9 @@ The half-arm alone didn't give a good enough range of motion, so **3 additional 
 
 ---
 ### Medication Tray Design
+<img width="600" height="200" alt="medication-tray-isometric-view png" src="https://github.com/user-attachments/assets/37e8b059-3b52-4097-b8ed-f77eeaf53c0b" />
+<img width="600" height="200" alt="medication-tray-spacing-topview png" src="https://github.com/user-attachments/assets/d1b10d59-b2a3-4ea6-948e-78fdb3621509" />
 
-<img src="05_MEDIA/IMAGES/cap_med.PNG" width="600"/>
-<img src="05_MEDIA/IMAGES/espacemment_de_boite_de_médicament.PNG" width="600"/>
 
 The medication tray is designed with precisely spaced compartments, allowing JALOUL's
 gripper to reliably grab, lift, and place each medication box during the restocking process.
