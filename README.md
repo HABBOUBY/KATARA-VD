@@ -278,7 +278,13 @@ After the head, the neck and body were completed, followed by the first two shou
 The half-arm alone didn't give a good enough range of motion, so **3 additional joints** were added — two to complete the arm and let it reach in closer toward the body, and a third dedicated to the gripper, letting it spin a full **360°** around the arm's axis. That's **5 joints per arm, 10 total** across both. The gripper itself runs on a dual-pinion system driven by an **MG995 servo**, and the overall body shape was refined to look more presentable and cohesive. The image above shows both arms swept across several positions, illustrating the reach this extra range of motion unlocks.
 
 ---
+### Medication Tray Design
 
+<img src="05_MEDIA/IMAGES/cap_med.PNG" width="600" height="200"/>
+<img src="05_MEDIA/IMAGES/espacemment_de_boite_de_médicament.PNG" width="600" height="200"/>
+
+The medication tray is designed with precisely spaced compartments, allowing JALOUL's
+gripper to reliably grab, lift, and place each medication box during the restocking process.
 ## Part 11 — Mecanum Base & Vertical Lift
 
 <p align="center">
