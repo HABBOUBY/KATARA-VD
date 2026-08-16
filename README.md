@@ -279,8 +279,11 @@ The half-arm alone didn't give a good enough range of motion, so **3 additional 
 
 ---
 ### Medication Tray Design
-<img width="600" height="200" alt="medication-tray-isometric-view png" src="https://github.com/user-attachments/assets/37e8b059-3b52-4097-b8ed-f77eeaf53c0b" />
-<img width="600" height="200" alt="medication-tray-spacing-topview png" src="https://github.com/user-attachments/assets/d1b10d59-b2a3-4ea6-948e-78fdb3621509" />
+<p align="center">
+  <img width="300" height="200" alt="medication-tray-isometric-view png" src="https://github.com/user-attachments/assets/37e8b059-3b52-4097-b8ed-f77eeaf53c0b" />
+  <img width="300" height="200" alt="medication-tray-spacing-topview png" src="https://github.com/user-attachments/assets/d1b10d59-b2a3-4ea6-948e-78fdb3621509" />
+</p>
+
 
 
 The medication tray is designed with precisely spaced compartments, allowing JALOUL's
