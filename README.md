@@ -424,7 +424,7 @@ Both arms swept across multiple positions, showing the range unlocked by the ext
 - Physical build, once 3D printing, camera, and Raspberry Pi access are within reach
 - Firmware: Raspberry Pi 5 vision pipeline (RealSense prescription OCR + thermal state detection)
 - Identification/database backend linking resident IDs to the fund's give/receive logic
--Add a delivery drone to transport medications from local storage to JALOUL for restocking the vending machine
+- Add a delivery drone to transport medications from local storage to JALOUL for restocking the vending machine
 ---
 
 ## License
