@@ -3,7 +3,7 @@ KATARA-VD — JALOUL (HUMANOID ROBOT) — WIRING REFERENCE
 ====================================================================
 No dedicated PCB for JALOUL either. Same approach as the vending
 machine: DRV8825 driver(s) and 5V regulation live on a perforated
-prototyping board ("carte perforee").
+prototyping board .
 
 --------------------------------------------------------------------
 1. POWER SOURCES
