@@ -4,7 +4,7 @@
 
 ### A Vending Machine That Doesn't Sell — It Gives
 
-*Free medications, a community-powered fund, and a humanoid robot that keeps it stocked — technology in service of humanity.*
+*Free medications, a community-powered fund, and a humanoid robot that keeps it stocked — technology in service of humanity to develop the future.*
 
 <p align="center">
   <img src="05_MEDIA/IMAGES/main image of the project.png" width="600">
