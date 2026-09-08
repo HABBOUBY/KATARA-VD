@@ -3,8 +3,7 @@ KATARA-VD — VENDING MACHINE — WIRING REFERENCE
 ====================================================================
 No dedicated main PCB for this subsystem. The only custom PCB in the
 whole project is the charity keypad module (see 03_PCB_DESIGN/).
-Everything below lives on perforated prototyping boards ("cartes
-perforees"), grouped by mechanism to keep wiring runs short.
+Everything below lives on perforated prototyping boards , grouped by mechanism to keep wiring runs short.
 
 --------------------------------------------------------------------
 1. POWER SOURCES
