@@ -259,7 +259,7 @@ la première articulation est dans l'épaule .Puis la bras supérieur à une art
 ces articulations sont suffisantes pour faire les tâches nécessaires 
 
 
-### Medication Tray Design
+### le box du médicament 
 <p align="center">
   <img width="300" height="200" alt="medication-tray-isometric-view png" src="https://github.com/user-attachments/assets/37e8b059-3b52-4097-b8ed-f77eeaf53c0b" />
   <img width="300" height="200" alt="medication-tray-spacing-topview png" src="https://github.com/user-attachments/assets/d1b10d59-b2a3-4ea6-948e-78fdb3621509" />
@@ -268,24 +268,30 @@ ces articulations sont suffisantes pour faire les tâches nécessaires
 
 puisque "JALOUL" a un gripper qui ne peut pas entrer  entre les boxes du médicament  , de telle façon j'ai on va mettre les médicaments espacés pour que jalloul peut les porter avec ses deux "gripper"
 
-## Part 11 — Mecanum Base & Vertical Lift
+## Part 11 — le mvt vertical du jaloul
 
 <p align="center">
   <img src="05_MEDIA/SIMULATIONS/translation of the robot on yy' axis.gif" width="450">
 </p>
+jaloul  a un mvt vertical grace à un système vis et écrous pour le donner l'accès au tous éatges du distributeur 
+ce mvt lineàire est dû à un mvt rotatif d'un moteur stepper nema A17  avec un  accouplement entre le vis et l'axe du moteur ( juste je vais ajouter un petit remarque que le guidage de vis est accompagné avec un roulement à billes radiales en haut )
 
-JALOUL moves on a **4-wheel mecanum differential base**, giving it 5 distinct movements — forward, backward, left, right, and rotation around its own center of inertia (deliberately aligned with its center of mass for stable motion). Four **NEMA 23 stepper motors** drive the wheels. A storage backpack rides up and down along the robot's Y-Y′ axis via a **lead screw–nut system**, powered by a fifth NEMA 23 stepper and guided by two **M8 smooth rods** with linear bearings.
+aussi jalloul a un capteur lidar qui le permet de tracer son trajectoire et détecter aussi les obstacles pour un mieux mvt
+
+de plus jaloul a une base de 4 roues mecanum qui le donne des choix dans mvt comme ça(↑↓←→ )
 
 ---
 
 
 ## Electronics & PCB
 
-- **Raspberry Pi 5** — vision and analysis layer: processes the Intel RealSense prescription scans and the thermal camera readings.
-- **Arduino Mega 2560** — command layer: drives the machine's motors, servos, solenoids, and sensors.
-- **Custom KiCad PCB** (`03_PCB_DESIGN/`) — the charity keypad module: double-sided, 0.5 mm traces, OLED display, ID validation circuitry.
+- **Raspberry Pi 5** — analyse de données
+- 
+- **Arduino Mega 2560** —carte de commande 
+- **Custom KiCad PCB** - le clavier qui permet de connaître chacun avec son identifiant 
 
-Full BOM with Amazon sourcing links: [`04_DOCS/KATARA-VD_PCB_Components.xlsx`](04_DOCS/KATARA-VD_PCB_Components.xlsx).
+voire les composants électriques d'amazon: 
+[`04_DOCS/KATARA-VD_PCB_Components.xlsx`](04_DOCS/KATARA-VD_PCB_Components.xlsx).
 
 ---
 
@@ -314,7 +320,6 @@ Full BOM with Amazon sourcing links: [`04_DOCS/KATARA-VD_PCB_Components.xlsx`](0
 | M3 | 20 mm | 40 |
 | M3 | 30 mm | 40 |
 
-**Total: to be finalized** — final counts will be filled in once the last assemblies are locked.
 
 ---
 
