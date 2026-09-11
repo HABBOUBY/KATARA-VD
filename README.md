@@ -182,7 +182,8 @@ Pour avoir un accès légal pour le distributeur , doit etre la personne accompa
   <img src="05_MEDIA/IMAGES/fixation ordonnance.PNG" width="350">
 </p>
 
-*Left: side-view cutaway of the rotary-to-linear stepper mechanism with the RealSense camera positioned above it. Right: top-down view of the prescription clamped between the two magnetic arms before the scan.*
+*A gauche: le mvt linéaire par le stepper et le scan avec le caméra intelreal sense * 
+*A droit : le support de l'ordonnance et ses deux fixations  qui vont  l'attatacher *
 
 ---
 
