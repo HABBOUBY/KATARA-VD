@@ -147,35 +147,35 @@ Cette idée est née du hackclub comme il est  "charitable " club , donc j'ai pe
 ---
 
 
-# Vending Machine
+# Le distributeur 
 
-## Part 1 — Skeleton, Shelving & Archimedean Dispensers
+## Partie 1 : MEC CiSEAUX
 
 <p align="center">
   <img src="05_MEDIA/IMAGES/mec cisseau.PNG" width="450">
 </p>
 
-The main skeleton holds **5 shelves**, each guided by two systems working together: a **dual-rail linear guide** and a **wheel-based guide**, keeping every shelf level and stable as it moves. To save interior space while still letting JALOUL reach every level, the shelves extend outward through a **scissor-lift mechanism** driven by a **NEMA 17 stepper motor** — one per shelf, as shown above. Each shelf dispenses its products through a spiral **Archimedean screw**, turning rotary motion into steady, single-item feeding.
+Le distributeur a  5 principaux plateaux qui referment les médicaments .Donc pour que les plateaux soient accessibles à "JALOUL"  , doit avoir un mvt en translation donc le mec de ciseux permet les plateaux de sortir autrement dit mec ciseaux permet de  l'étirement et le raccourcissement des plateaux.Ce mec ciseaux est accompagné avec un stepper A17 de telle façon le mvt en rotation se transforme en translation
 
 ---
 
-## Part 2 — Solar Power & Access Doors
+## Partie 2- panneau solaire et le porte intelligent 
 
 <p align="center">
   <img src="05_MEDIA/IMAGES/VENDING MACHINE 4K.png" width="450">
 </p>
 
-The machine carries its own **solar panel and mounting bracket** on top, feeding the battery system so it never runs dry. Two actuators (**vérins**) open the front doors — each guided by two hinges — so the shelves become accessible to JALOUL from the outside without exposing the machine's interior to the public. A dedicated electrical compartment houses the machine's power and control boards.
+AU cas ou les batteries sont vide , et n'existe pas du courant donc il le panneau solaire est un alternatif dans ce cas ( qui permet de charger un batterie et cette batterie va etre consommé au cas ou les batteries vides.
+De plus , ce distributeur a une porte intelligente qui s'ouvre et se ferme avec deux vérins électriques d'un façon  à transformer le mvt linéaire en mvt rotatif .Et ça a une dualité de fonction le distributeur n'est pas accessibles aux personnes seulement au "JALLOUL"
 
 ---
 
-## Part 3 — Prescription Verification System
-
+## Part 3 — Scanner et vérifier l'accès pour les médicaments
 <p align="center">
   <img src="05_MEDIA/SIMULATIONS/mechanism of prescription.gif" width="450">
 </p>
 
-Access to the medication is gated by a scan, not by a button press. A **stepper-driven rotary-to-linear mechanism**, guided by two rails and two wheels fitted with **radial ball bearings**, extends a plate out of the machine. The plate holds the prescription in place via a **magnetic mount** — two small arms clamp onto it using the same magnetic principle. Once retracted inside, an **Intel RealSense** camera — fixed at a precisely calculated angle to capture the whole document — scans the prescription to identify the medication and confirm the correct dispensing choice. The sequence: extend to receive the prescription → retract to scan → extend again to return it to the person.
+Pour avoir un accès légal pour le distributeur , doit etre la personne accompagné avec une ordonnance.Cette etapge est guidé avec un mécanisme linéaire avec un stepper nema A 17 qui permet de translater un support qui a intérieument deux aimants magnétiques de telle façon l'ordonnace est attaché au support avec deux fixation que peut la personnes l'ouvrir et le fermer  ( aussi ces deux fixations ont à son intérieur un aimant magnétique de façon une attraction magnétique va etre crée avec le support principal ).Puis un caméra intelreal sense va détecter  le nom du médicament .Et finalement le médicament est poussé avec un spirale ( avec un moteur pas à pas petit ) puis il tombe en faisant une chute libre.
 
 <p align="center">
   <img src="05_MEDIA/IMAGES/mec ordonnance 1.1.PNG" width="350">
