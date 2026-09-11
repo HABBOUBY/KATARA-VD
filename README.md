@@ -252,19 +252,13 @@ A l'intérieur de sa tête il y a raspberry pi 5 pour l'analyse de données et f
 
 ## Part 9 — Le corps et les articulations du "Jaloul"
 
-After the head, the neck and body were completed, followed by the first two shoulder joints. The first joint's axis runs perpendicular to the robot's body, tracing a circle tangent to the head's median plane; the second joint moves in a plane perpendicular to the first. Together they formed a first half-arm, mirrored across the body to create the second.
+"Jaloul" a 12 articulations ( 6 articulations pour chaque main)
 
----
+la première articulation est dans l'épaule .Puis la bras supérieur à une articulation de façon que l'axe du chaque articulation est orthogonal  à l'autre.Puis une articulation pour le coude et finalement un pour le poignet et une autre pour les doigts .
 
-## Part 10 — Arm Completion & 360° Gripper
+ces articulations sont suffisantes pour faire les tâches nécessaires 
 
-<p align="center">
-  <img src="05_MEDIA/IMAGES/JALOUL in different positions.png" width="450">
-</p>
 
-The half-arm alone didn't give a good enough range of motion, so **3 additional joints** were added — two to complete the arm and let it reach in closer toward the body, and a third dedicated to the gripper, letting it spin a full **360°** around the arm's axis. That's **5 joints per arm, 10 total** across both. The gripper itself runs on a dual-pinion system driven by an **MG995 servo**, and the overall body shape was refined to look more presentable and cohesive. The image above shows both arms swept across several positions, illustrating the reach this extra range of motion unlocks.
-
----
 ### Medication Tray Design
 <p align="center">
   <img width="300" height="200" alt="medication-tray-isometric-view png" src="https://github.com/user-attachments/assets/37e8b059-3b52-4097-b8ed-f77eeaf53c0b" />
@@ -324,11 +318,6 @@ Full BOM with Amazon sourcing links: [`04_DOCS/KATARA-VD_PCB_Components.xlsx`](0
 
 ---
 
-## CAD Files
-
-Per subsystem: **native SolidWorks** source, **STEP** (any CAD tool), and **STL** (slicer-ready) under `01_3D/`, plus **DXF** flat-panel files for CNC laser cutting under `02_DXF/`.
-
----
 
 ## Simulations
 
