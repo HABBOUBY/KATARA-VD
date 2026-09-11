@@ -215,23 +215,24 @@ regardez l'imagez pour mieux comprendre
 
 ---
 
-## Part 6 — Charity Keypad PCB
+## Part 6 Clavier PCB pour l'identfication
 
 <p align="center">
   <img src="05_MEDIA/IMAGES/PCB_KEYBOARD_4K.png" width="450">
 </p>
+Chaque personne de la ville ou cette machine est placé a un code  spécifique à lui  , de telle façon le lorsque la personne entre son code il le connait (est ce qu'il a pris 2 euro par jours ou non ? ) ET il y a deux clavier pour les personnes qui ont besoin et son etat financière est  un peu faible et entre les personnes riches . une petite remarque : il existe deux  clavier un peu les dons et un pour les demandes et chaque clavier a aussi un ecran oled
+De plus , j'ai fait une petite liste qui renferme tous les composants électriques nécessaires pour réaliser ces claviers
 
-The identification and donation-amount interface runs on a custom **KiCad PCB** — a double-sided board with **0.5 mm copper traces** throughout, since the board carries no significant power or current. An **OLED display** handles animations and shows each resident's ID code, since every person in the community has a unique identifier used to validate which function (receiving or giving) they're authorized to access. Full BOM with sourcing links: [`04_DOCS/KATARA-VD_PCB_Components.xlsx`](04_DOCS/KATARA-VD_PCB_Components.xlsx).
-
----
-
-## Part 7 — Thermal Sensing & Voice Interaction
-
-An infrared thermal camera reads the person standing in front of the machine — not to identify them, but to catch visible signs that something is wrong: distress, sadness, or a physical state serious enough to count as a medical emergency. Paired with a small onboard speaker, the machine can respond dynamically rather than just process a transaction, making the interaction feel less like a vending machine and more like something that's actually paying attention.
 
 ---
 
-# JALOUL — The Restocking Humanoid
+## Part 7 — Détection thermique et interaction vocale
+
+Une caméra  infrarouge qui permet de détecter des signes que quelque chose ne va pas de la tristesse ou un état physique  qui demande  une urgence médicale. avec un petit "speaker" intégré qui va répéter des morceaux mp3 pour faire une interaction avec les personnes et le rendre plus dynamique .
+
+---
+
+# JALOUL — the huamnoid robot
 
 ## Part 8 — Head & Expression System
 
