@@ -266,9 +266,8 @@ The half-arm alone didn't give a good enough range of motion, so **3 additional 
 </p>
 
 
+puisque "JALOUL" a un gripper qui ne peut pas entrer  entre les boxes du médicament  , de telle façon j'ai on va mettre les médicaments espacés pour que jalloul peut les porter avec ses deux "gripper"
 
-The medication tray is designed with precisely spaced compartments, allowing JALOUL's
-gripper to reliably grab, lift, and place each medication box during the restocking process.
 ## Part 11 — Mecanum Base & Vertical Lift
 
 <p align="center">
@@ -279,25 +278,6 @@ JALOUL moves on a **4-wheel mecanum differential base**, giving it 5 distinct mo
 
 ---
 
-## Part 12 — Frame Reinforcement & LiDAR
-
-The lead screw system was finished off with a protective cover, and **aluminum extrusion profiles** were added throughout the frame for rigidity and long-term structural stability. Finally, an **RPLiDAR** sensor was integrated for obstacle detection and environment mapping, letting JALOUL navigate around the vending machine safely.
-
----
-
-## The Humanitarian Logic — How the Community Fund Works
-
-KATARA-VD doesn't rely on outside donations to stay running — the fund lives inside the machine itself, managed through the two keypads described in [Part 4](#part-4--coin-dispensing-mechanism-giving-money) and [Part 5](#part-5--coin-acceptance--storage).
-
-- **Every person has a personal ID code**, entered on either keypad, that tells the machine exactly what they're authorized to do.
-- **Requesting help:** a family in need enters their ID and the amount they need on the "receiving" keypad. Each family is capped at **€10 each day** — enough to help them get by, not a blank check.
-- **Giving back:** someone whose financial situation is stable is expected to contribute through the "giving" keypad — exactly **€2 per day**. The coin acceptor is built to reject anything above or below that amount.
-- **Accountability:** if a contributor misses their daily donation for **10 days within a single month**, they lose access to free medication from the machine until their participation resumes.
-- **The loop closes automatically:** every euro accepted through the donation side feeds directly into the coin-dispensing mechanism on the receiving side — the community funds itself.
-
-This logic is what turns KATARA-VD from a simple vending machine into a small, self-sustaining mutual-aid system.
-
----
 
 ## Electronics & PCB
 
