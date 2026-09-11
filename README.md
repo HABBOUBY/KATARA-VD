@@ -2,9 +2,8 @@
 
 # KATARA-VD
 
-### A Vending Machine That Doesn't Sell — It Gives
+### une mahcine qui ne vend pas mais elle donne
 
-*Free medications, a community-powered fund, and a humanoid robot that keeps it stocked — technology in service of humanity to develop the future.*
 
 <p align="center">
   <img src="05_MEDIA/IMAGES/main image of the project.png" width="600">
@@ -67,14 +66,16 @@ Built by **HABBOUBY EDEM**
 
 ## About
 
-**KATARA-VD** is a smart vending machine that gives instead of sells — dispensing free medication to people who need it, and running on a self-sustaining community fund where those who can afford to give €2 a day keep the machine stocked for those who can't. A humanoid restocking robot, **JALOUL**, keeps its shelves filled without any human ever needing to open it up.
+**Katara-vd** une machine intelligente qui donne au lieu de vendre les médiacaments pour les personnes qui ont besoin . et pour que les riches personnes ont accès à cette mahicne ils doivent payer 2 euro , accompagné d'un huamnoid robot qui permet de remplir le distributeur .
 
-Two systems, one mission:
 
-1. **The Vending Machine** — 5 shelves of medication, ID-gated by an Intel RealSense prescription scan, a solar-backed power system, and a full charity logic built into its own PCB.
-2. **JALOUL** — a 10-joint humanoid robot on a mecanum base, designed specifically to restock the machine's shelves autonomously.
+Katara-vd  est le projet principal constitué de deux mini -projet:
 
-Designed from scratch in SolidWorks and KiCad.
+-le distributeur: qui a une partie pour les médicaments , de plus , ce distributeur a une partie pour les dons qui a un mécanisme de pousse pour donner de l'argent et une petite pièce pour trier les pièces de monnaie ( seulement accepte les pièces de 2 euro)
+
+-The humanoid robot  , son nom est "JALLUL " son tache est de remplir le distributeur lorsqu'il est vide de médicament 
+
+
 
 ---
 
@@ -85,24 +86,24 @@ KATARA-VD/
 │
 ├── 01_3D/
 │   ├── SOLIDWORKS_FILES/
-│   │   ├── HUMANOID_ROBOT JALOUL/      # JALOUL — native SolidWorks parts & assemblies
-│   │   └── VENDING_MACHINE/            # Vending machine — native SolidWorks parts & assemblies
+│   │   ├── HUMANOID_ROBOT JALOUL/      
+│   │   └── VENDING_MACHINE/            
 │   ├── STEP_FILES/
-│   │   ├── HUMANOID_ROBOT JALOUL/      # total assembly of jaloul.STEP
-│   │   └── VENDING_MACHINE/            # assembly vending machine.STEP
+│   │   ├── HUMANOID_ROBOT JALOUL/      
+│   │   └── VENDING_MACHINE/         
 │   └── STL/
-│       ├── HUMANOID_ROBOT JALOUL/      # Slicer-ready STL, split by sub-assembly
-│       └── VENDING_MACHINE/            # Slicer-ready STL, split by sub-assembly
+│       ├── HUMANOID_ROBOT JALOUL/      
+│       └── VENDING_MACHINE/            
 │
 ├── 02_DXF/
-│   └── VENDING_MACHINE/                # Flat panels (walls, base, shelves...) for CNC laser-cut MDF
+│   └── VENDING_MACHINE/
 │
 ├── 03_PCB_DESIGN/
 │   ├── VENDING MACHINE PCB.kicad_sch / .kicad_pcb / .kicad_pro / .kicad_prl
 │   └── CARTE ELEC MEC 07.step
 │
 ├── 04_DOCS/
-│   └── KATARA-VD_PCB_Components.xlsx   # Full BOM with Amazon sourcing links
+│   └── KATARA-VD_PCB_Components.xlsx   
 │   └──WIRING
 |
 ├── 05_MEDIA/
@@ -125,53 +126,26 @@ KATARA-VD/
 
 ---
 
-## Scope of This Submission
 
-**Mechanical CAD + custom KiCad PCB** for the charity keypad module, plus the full mechanical design of the vending machine's dispensing/coin systems and of JALOUL. Firmware and the identification/database backend are not included yet — the control architecture (Raspberry Pi 5 for vision, Arduino Mega 2560 for actuator control) is documented as design intent throughout this README.
 
----
+## remarque pour la fabrication physique 
 
-## Note on Physical Fabrication
+malheuresemnt j'ai pas accès à l'impression 3d  pour faire un petit prototype et les composants électriques car ils osnt très chères ( raspberry pi 5 and intel real sense)
 
-I still don't have access to a 3D printer, an Intel RealSense camera, or a Raspberry Pi — import taxes make them very expensive in Tunisia, and local paid makerspaces are scarce. On top of that, several of this machine's parts (the main walls, the base, the shelving panels) are simply too large to be realistically FDM-printed even if I had a printer.
+Mais "KATARA" est pret pour la mettre en production réelle et le rendre fonctionel ( j'ai mis tous les dossiers nécessaires pour l'impression  3d et le découpe cnc)
 
-So KATARA-VD ships as a **complete, fabrication-ready package** using two complementary paths:
+- **CNC laser-cut MDF** (`02_DXF/`) 
+- **3D-printable STL/STEP** (`01_3D/`) 
 
-- **CNC laser-cut MDF** (`02_DXF/`) for the large flat structural parts — walls, base, shelves — sized and nested as real DXF files, ready to send to any laser-cutting service.
-- **3D-printable STL/STEP** (`01_3D/`) for the smaller mechanical parts — dispensers, mechanisms, JALOUL's joints and gripper.
-
-This mixed approach keeps the project realistic and buildable even without local printer access — MDF panels are cheap, available everywhere, and don't need a 3D printer at all.
+-une petite remarque: j'ai fait ce mixage de matière  car il y a des pièces qui sont un peu grande donc il est impossible de l'imprimer avec une printer 3D local
 
 ---
 
-## The Story Behind KATARA-VD
-
-The idea didn't start with a blueprint — it started with a question.
-
-Hack Club gave me, and a lot of other young makers, a shot at being among the elite — not by paying for it, but through pure cultural and technical exchange: build something real, and the door opens. That stuck with me. If a community can create opportunity just by giving people a chance to build and share, why couldn't I build something that gives back the same way, in my own field — robotics?
-
-That question became KATARA-VD: a vending machine that doesn't sell anything. It gives.
-
-The machine holds **5 shelves of medication**, but nobody can just walk up and take what they want. Access is gated by a prescription scan: a mechanism converts rotary motion into linear motion to extend a magnetic plate outward, two small arms hold the prescription against it, an **Intel RealSense** camera reads it, and only then does the system know exactly which medication to release — and to whom.
-
-Running that kind of machine costs money, so I built the funding into the machine itself instead of relying on an external charity. Two keypads, each with its own OLED, handle two opposite flows: one lets a family in need request money (capped so they can feed themselves), the other lets someone whose finances are stable contribute to the fund. Every person is identified by their own code, so the machine always knows who's asking and who's giving — and can hold both sides accountable. The full logic is detailed in [The Humanitarian Logic](#the-humanitarian-logic--how-the-community-fund-works) below.
-
-Because a project like this can't afford to go dark, a **solar panel** kicks in whenever the batteries run low. And because a machine like this will be approached by people in real distress, I added a thermal camera to read basic signs of distress on the person standing in front of it — anger, sadness, or symptoms serious enough to count as a medical emergency — paired with a small speaker so the machine can respond, not just dispense.
-
-The last piece was keeping it stocked without needing a person to open it every day. That's where **JALOUL** comes in — a humanoid robot built specifically to restock KATARA-VD's shelves, which slide out to meet it through a scissor-lift mechanism designed to save space inside the machine.
+## Comment l'idée de KATARA est née
+Cette idée est née du hackclub comme il est  "charitable " club , donc j'ai pensé à faire une chose qui a des bienfaits pour tous le monde .
 
 ---
 
-## The Ecosystem: 2 Systems, 1 Mission
-
-| # | Subsystem | Role |
-|---|-----------|------|
-| 1 | **Vending Machine** | Verifies prescriptions, runs the community fund, dispenses medication |
-| 2 | **JALOUL** | Restocks the machine's shelves autonomously, no human intervention needed |
-
-The vending machine's charity keypad and dispensing logic run on their own KiCad PCB. JALOUL is a separate, self-contained humanoid platform.
-
----
 
 # Vending Machine
 
