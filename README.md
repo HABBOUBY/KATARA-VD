@@ -389,7 +389,7 @@ Both arms swept across multiple positions, showing the range unlocked by the ext
 
 ---
 
-## Future Improvements
+##ce que je peux faire dans le future 
 
 -Faire un assemblage et imprimer les pièces  pour faire un petit prototype 
 -ajoutez un drone pour transporter les médicaments du l'usine lorsque le stockage est vide
