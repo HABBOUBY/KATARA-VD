@@ -240,11 +240,17 @@ Une caméra  infrarouge qui permet de détecter des signes que quelque chose ne 
   <img src="05_MEDIA/IMAGES/JALOUL 4K.png" width="450">
 </p>
 
-JALOUL's head carries an **Intel RealSense** camera for vision and a **Raspberry Pi 5** for onboard data processing. A servo-driven **mouth mechanism** — a driver/follower pulley pair guided at both ends by matched M3 screws and nuts, same module and diameter for symmetric motion — opens and closes as if the robot is speaking, giving it a more expressive, approachable presence.
+la tête du jaloul a un caméra Intel Realsense pour détecter le trajectoire et l'entrainer sur le remplissage du distributeur et lorsqu'il est vide 
+et aussi les places exactes à mettre les médicaments.
+Aussi jalloul a une bouche mécanique pour le rendre un peu plus réel accompagné avec un sevro moteur MG95
+( the metal gear)
+A l'intérieur de sa tête il y a raspberry pi 5 pour l'analyse de données et faire bouger aussi la bouche 
+
+
 
 ---
 
-## Part 9 — Body & Shoulder Joints
+## Part 9 — Le corps et les articulations du "Jaloul"
 
 After the head, the neck and body were completed, followed by the first two shoulder joints. The first joint's axis runs perpendicular to the robot's body, tracing a circle tangent to the head's median plane; the second joint moves in a plane perpendicular to the first. Together they formed a first half-arm, mirrored across the body to create the second.
 
