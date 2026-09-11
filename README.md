@@ -187,7 +187,7 @@ Pour avoir un accès légal pour le distributeur , doit etre la personne accompa
 
 ---
 
-## Part 4 — Coin Dispensing Mechanism ("Giving Money")
+## Part 4 — système de pousse de l'argent
 
 <p align="center">
   <img src="05_MEDIA/SIMULATIONS/mechanism of giving money.gif" width="450">
@@ -196,17 +196,22 @@ Pour avoir un accès légal pour le distributeur , doit etre la personne accompa
   <img src="05_MEDIA/SIMULATIONS/GIF MEC PUSHING THE MONEY INTO THE BOX.gif" width="450">
 </p>
 
-When a family withdraws money from the fund, an **MG90S metal-gear servo** drives a **rack-and-pinion system**, sized precisely to the dimensions of a 1-euro coin, pushing out two coins at a time. A second servo locks and unlocks a small security door that covers the coin slot; once unlocked, the door opens smoothly, guided at its edge by two matching pieces.
+Le premier GIF  montre , le pousse de l'argent pour les donnés aux personnes qui ont besoin 
+Le dexième GIF montre aussi le pousse de l'argent mais dans un box , et ce mec est pour conserver les pièces de monnaies que les riches personnes ont donné  dans le boxe  qui sont tombé de la pièce de tri de monnaie 
 
 ---
 
-## Part 5 — Coin Acceptance & Storage
+## Part 5 — LA pièce de tri de l'argent 
 
 <p align="center">
   <img src="05_MEDIA/IMAGES/système de tri coin.PNG" width="300">
 </p>
 
-The donation side accepts **2-euro coins only** — smaller coins are filtered out, and larger coins are naturally rejected by the slot geometry. This coin-sorting slot is the same basic mechanism found in virtually every vending machine: a slotted rotating gate lets correctly-sized coins drop through while rejecting anything else. An **IR sensor** confirms each valid coin as it enters, registering the donation. Accepted coins fall into a **storage box**, pushed fully inside by a rack-and-pinion mechanism so they stay securely contained rather than jamming the entry.
+la pièce de monnaie se glisse d'un façon cette pièce permet de trier les pièces , donc comment ??
+Cette pièce a un petit mur qui est oblique d'un 30 degré puis il est suivi  d'un trou  de diamètre un peu plus petit du pièce de monnaie du 2 euro donc si la pièce donné est 2euro va etre glissé  et se tombe dans le box  et il y a un capteur IR qui va détcteer qu'elle a tombé.
+Si la pièce est plus petite que 2 euro donc elle va tomber au trou et sort et si elle est plus  grande que 2 euro au début il ne peut pas entrer à cette pièce
+
+regardez l'imagez pour mieux comprendre
 
 ---
 
@@ -405,10 +410,9 @@ Both arms swept across multiple positions, showing the range unlocked by the ext
 
 ## Future Improvements
 
-- Physical build, once 3D printing, camera, and Raspberry Pi access are within reach
-- Firmware: Raspberry Pi 5 vision pipeline (RealSense prescription OCR + thermal state detection)
-- Identification/database backend linking resident IDs to the fund's give/receive logic
-- Add a delivery drone to transport medications from local storage to JALOUL for restocking the vending machine
+-Faire un assemblage et imprimer les pièces  pour faire un petit prototype 
+-ajoutez un drone pour transporter les médicaments du l'usine lorsque le stockage est vide
+
 ---
 
 ## License
